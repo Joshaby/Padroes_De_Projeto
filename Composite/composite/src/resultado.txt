@@ -1,0 +1,15 @@
+Graphic1 Area: 87.93074058937117
+Graphic1 Perimetro: 64.415
+Graphic2 Area: 98.245
+Graphic2 Perimetro: 39.415000000000006
+Ellipse
+Ellipse
+Ellipse
+Triangle
+Triangle
+Ellipse
+Square
+Circle
+Square
+Graphic Area: 223.4492405893712
+Graphic Perimetro: 134.67900000000003
