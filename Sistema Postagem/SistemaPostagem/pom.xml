@@ -42,7 +42,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>br.edu.ifpb.App</mainClass>
+              <mainClass>br.edu.ifpb.Client</mainClass>
             </manifest>
           </archive>
         </configuration>

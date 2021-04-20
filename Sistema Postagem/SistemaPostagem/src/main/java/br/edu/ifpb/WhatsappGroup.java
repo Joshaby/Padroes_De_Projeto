@@ -18,9 +18,11 @@ public class WhatsappGroup extends Subject {
         return messagesStack;
     }
     public void addMessage(String email, String message) throws UserException {
-        searchObserver(email);
-        messagesStack.push(new Message(email, message));
-        notifyObservers();
+        if (searchObserver(email) != null) {
+            messagesStack.push(new Message(email, message));
+            notifyObservers();
+        }
+        else throw new UserException(String.format("O usuário com o email %s não existe!", email));
     }
 
     @Override

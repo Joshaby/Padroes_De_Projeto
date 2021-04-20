@@ -37,9 +37,9 @@ public class Client {
                 String command = input.nextLine();
                 String[] subcommands = command.split(" ");
                 if (!subcommands[0].equals("postagem"))
-                    System.out.println(ANSI_RED + "Comando principal errado! Siga a sinópse: postagem {add | del | \"email\" \"message\"}" + ANSI_RESET);
+                    System.out.println(ANSI_RED + "Comando principal errado! Siga a sinópse: postagem {add email | del email | email \"message\"}" + ANSI_RESET);
                 else if (subcommands.length == 1)
-                    System.out.println(ANSI_RED + "Comando está incompleto!" + ANSI_RESET);
+                    System.out.println(ANSI_RED + "Comando está incompletp! Siga a sinópse: postagem {add email | del email | email \"message\"}" + ANSI_RESET);
                 else {
                     if (subcommands[1].equals("add")) {
                         if (emailValidator(subcommands[2])) whatsappGroup.add(new User(subcommands[2], whatsappGroup));
@@ -50,8 +50,9 @@ public class Client {
                         else System.out.println(ANSI_RED + "Email inválido!" + ANSI_RESET);
                     }
                     else if (!subcommands[1].equals("add") && !subcommands[1].equals("del") && emailValidator(subcommands[1]))
-                        whatsappGroup.addMessage(subcommands[1], generateMessage(subcommands));
-                    else System.out.println(ANSI_RED + "Email inválido ou opções inválidas digitadas!" + ANSI_RESET);
+                        if (subcommands.length <= 2) System.out.println(ANSI_RED + "Digite uma mensagem!" + ANSI_RESET);
+                        else whatsappGroup.addMessage(subcommands[1], generateMessage(subcommands));
+                    else System.out.println(ANSI_RED + "Email inválido ou opções inválidas digitadas!\n As opções disponíveis são add email | del email | \"email\" \"message\"" + ANSI_RESET);
                 }
             }
             catch (UserException e) {
